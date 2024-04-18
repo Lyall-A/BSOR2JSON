@@ -1,0 +1,4 @@
+*.bsor
+!test.bsor
+index.js
+parsed.json

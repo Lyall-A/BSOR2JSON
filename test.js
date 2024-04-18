@@ -21,5 +21,15 @@ console.log();
 
 // Custom data
 const averageFps = parsedBsor.frames.map(i => i.fps).reduce((prev, curr) => prev + curr) / parsedBsor.framesCount;
+const goodCuts = parsedBsor.notes.filter(i => i.eventType == 0).length;
+const badCuts = parsedBsor.notes.filter(i => i.eventType == 1).length;
+const misses = parsedBsor.notes.filter(i => i.eventType == 2).length;
+const bombsHit = parsedBsor.notes.filter(i => i.eventType == 3).length;
+const fullCombo = goodCuts == parsedBsor.noteCount;
 // Log custom
 console.log("Average FPS", averageFps);
+console.log("Good cuts:", goodCuts);
+console.log("Bad cuts:", badCuts);
+console.log("Misses:", misses);
+console.log("Bombs hit:", bombsHit);
+console.log("Full combo:", fullCombo);
